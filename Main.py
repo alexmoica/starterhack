@@ -11,31 +11,34 @@ def showFrame(page):
 
 class HomePage(tk.Frame):
 	def __init__(self, master):
-	
+		
 		logoImage=tk.PhotoImage(file=dp+'LOGO.gif')
 		
 		#set up the tk window
 		tk.Frame.__init__(self, master)
-		root.geometry('875x480')
+		root.geometry('860x483')
 		root.resizable(width=False, height=False)
+		HomePage.configure(self, bg='white')		
 		
+		for i in range(1, 52): #create spacer label for total columns in the frame
+			tk.Label(self, text=i, bg='black', fg='white', height=1, width=2).grid(row=i, column=0)
+			tk.Label(self, text=i, bg='black', fg='white', height=1, width=2).grid(row=0, column=i)
+			
 		#get all the university names
 		uniFile = open(dp+'universities.txt', 'r')
 		uniList = uniFile.readlines()
 		uniFile.close()
 		
 		#define objects
-		cLbl = tk.Label(self, text="hi")
 		cBtn = tk.Button(self, text="$", fg='green', activeforeground='green', width=10)
-		autoComplete = AutoComplete(uniList, self, width=100)
-		logo = tk.Label(image=logoImage)
+		autoComplete = AutoComplete(uniList, self, width=80)
+		logo = tk.Label(self, image=logoImage, width=500, height=150)
 		logo.image=logoImage #keep reference to image to avoid being cleared by Python's garbage-collector
 		
 		#define placements
-		cLbl.grid(row=0, column=0)
-		cBtn.grid(row=1, column=0)
-		autoComplete.grid(row=2, column=0)
-		logo.grid(row=3, column=0)
+		logo.grid(row=1, column=2, rowspan=8, columnspan=30)
+		autoComplete.grid(row=11, column=1, rowspan=2, columnspan=36)
+		cBtn.grid(row=11, column=20, rowspan=2, columnspan=26)
 		
 		#function to delete placeholder text on field entry
 		def placeholderDelete(event):
