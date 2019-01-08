@@ -12,7 +12,7 @@ def showFrame(page):
 class HomePage(tk.Frame):
 	def __init__(self, master):
 	
-		logoImage=tk.PhotoImage(file=dp+'duck.gif')
+		logoImage=tk.PhotoImage(file=dp+'LOGO.gif')
 		
 		#set up the tk window
 		tk.Frame.__init__(self, master)
