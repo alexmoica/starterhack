@@ -47,7 +47,7 @@ class AutoComplete(tk.Entry):
 	
 	def select(self, event):
 		if self.lb_up:
-			self.var.set(self.lb.get('active'))
+			self.var.set(self.lb.get('active').strip())
 			self.lb.destroy()
 			self.lb_up = False
 			self.icursor('end')
