@@ -29,7 +29,7 @@ class AutoComplete(tk.Entry):
 			words = self.compare()
 			if words:
 				if not self.lb_up:
-					self.lb = tk.Listbox(width=80)
+					self.lb = tk.Listbox(width=73)
 					self.lb.bind('<Double-Button-1>', self.select)
 					self.lb.bind('<Return>', self.select)
 					self.lb.place(x=self.winfo_x(), y=self.winfo_y()+self.winfo_height())
