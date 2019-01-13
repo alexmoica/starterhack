@@ -1,4 +1,4 @@
-# Starterhacks
+# Starterhacks: MarkBoard
 ## Inspiration
 We got tired of using conventional school grading sites because of their complicated interfaces to check marks. It would take so much time to locate grades on each course and we would be running into useless pages in the process.
 
